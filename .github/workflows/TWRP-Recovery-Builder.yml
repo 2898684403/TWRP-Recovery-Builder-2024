@@ -157,6 +157,7 @@ jobs:
 
     - name: Building Image 
       run: |
+        lunch omni_ossi-eng
         cd workspace
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
