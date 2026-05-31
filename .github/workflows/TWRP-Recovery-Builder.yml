@@ -16,7 +16,7 @@ on:
       DEVICE_TREE:
         description: 'Custom Recovery Tree' 
         required: true
-        default: 'https://github.com/kinguser981/cap_sprout_twrp'
+        default: 'https://github.com/2898684403/PLC110'
       DEVICE_TREE_BRANCH:
         description: 'Custom Recovery Tree Branch' 
         required: true
@@ -28,7 +28,7 @@ on:
       DEVICE_NAME:
         description: 'Specify your Device Codename' 
         required: true
-        default: 'cap_sprout'
+        default: 'ossi'
       BUILD_TARGET:
         description: 'Specify your Build Target' 
         required: true
@@ -161,7 +161,7 @@ jobs:
         cd workspace
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
-        lunch omni-ossi-eng
+        lunch omni_ossi-ap2a-eng
         lunch ${{ env.DEVICE_MAKEFILE }}-eng && make clean && make ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all)
         echo "Done building your ${{ github.event.inputs.BUILD_TARGET }}.img"
       
